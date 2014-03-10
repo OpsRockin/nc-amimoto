@@ -1,4 +1,4 @@
-if %w(redhat).include?(node[:platform])
+if %w(redhat centos).include?(node[:platform])
   template '/etc/yum.repos.d/nginx.repo' do
     source 'yum/nginx.repo.erb'
     action :create

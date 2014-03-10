@@ -43,7 +43,8 @@ default[:mysql][:config][:tmp_table_size]  = '64M'
 default[:mysql][:config][:max_connections] = '128'
 default[:mysql][:config][:thread_cache] = '128'
 
-case node[:ec2][:instance_type]
+# case node[:ec2][:instance_type]
+case node[:ec2]
 when "m3.medium"
   ## Nginx
   default[:nginx][:config][:worker_processes] = '2'

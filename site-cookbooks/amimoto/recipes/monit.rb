@@ -1,4 +1,4 @@
-if %w(redhat).include?(node[:platform])
+if %w(redhat centos).include?(node[:platform])
   yum_package 'monit' do
     action [:install, :upgrade]
     options '--enablerepo=rpmforge'

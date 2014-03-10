@@ -27,14 +27,14 @@ end
 %w{ default.conf default.backend.conf }.each do | file_name |
   template "/etc/nginx/conf.d/" + file_name do
     variables(
-      :server_name => node[:ec2][:instance_id]
+      :server_name => 'default'
     )
     source "nginx/conf.d/" + file_name + ".erb"
     notifies :reload, 'service[nginx]'
   end
 end
 
-%W{ /var/cache/nginx /var/log/nginx /var/www/vhosts/#{node[:ec2][:instance_id]} }.each do | dir_name |
+%W{ /var/cache/nginx /var/log/nginx /var/www/vhosts/default }.each do | dir_name |
   directory dir_name do
     owner node[:nginx][:config][:user]
     group node[:nginx][:config][:group]
