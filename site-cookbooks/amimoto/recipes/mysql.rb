@@ -14,7 +14,7 @@ end
 node[:mysql][:packages].each do |package_name|
   yum_package package_name do
     action [:install, :upgrade]
-    if ['redhat'].include?(node[:platform])
+    if ['redhat', 'centos'].include?(node[:platform])
       flush_cache [:before]
     end
   end

@@ -30,7 +30,7 @@ default[:php][:config][:max_execution_time] = node[:nginx][:config][:proxy_read_
 
 ## MySQL
 default[:mysql][:packages] = %w{ Percona-Server-server-55 Percona-Server-client-55 Percona-Server-shared-compat }
-if ['redhat'].include?(node[:platform])
+if ['redhat', 'centos'].include?(node[:platform])
   default[:mysql][:packages] = %w{ Percona-Server-server-55 Percona-Server-client-55 }
 end
 default[:mysql][:service_action] = [:enable, :start]
