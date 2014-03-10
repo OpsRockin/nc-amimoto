@@ -1,0 +1,5 @@
+commit f3b728d38f6fa7e499287e0103b765304c2f8c25
+Author: wokamoto <wokamoto1973@gmail.com>
+Date:   Tue Mar 4 13:54:36 2014 +0900
+
+    modified nginx/mobile-detect template
