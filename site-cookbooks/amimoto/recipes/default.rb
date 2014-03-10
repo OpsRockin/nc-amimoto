@@ -41,3 +41,6 @@ include_recipe 'amimoto::monit'
 
 # install wp-cli
 include_recipe 'amimoto::wpcli'
+
+# add entry to @reboot
+include_recipe 'amimoto::at_reboot'
